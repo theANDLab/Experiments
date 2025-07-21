@@ -17,3 +17,5 @@
 /PILOT VisualSearch - Eyetracking/task/data
 /PILOT VisualSearch - Eyetracking/task/log
 /PILOT VisualSearch - Eyetracking/task/scripts/data
+**/data/
+**/log/
