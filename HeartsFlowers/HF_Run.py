@@ -160,11 +160,7 @@ def run_condition(condition, practice=True):
             if keys:
                 key, rt = keys[0]
                 rt = rt - stim_onset  # Calculate RT as the time elapsed from stimulus onset
-                # Handle anticipatory response (RT < 200ms)
-                if rt < 0.2: 
-                    rt = None
-                    correct = None
-                    break 
+                # Anticipatory responses will have a negative RT in the data
                 if key == 'escape':
                     core.quit()
                     break
