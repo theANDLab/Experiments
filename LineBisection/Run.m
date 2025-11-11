@@ -56,6 +56,6 @@ else
 
 end
 
-%visualize_data(subj);
+visualize_data(subj);
 
 
