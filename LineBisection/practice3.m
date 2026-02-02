@@ -1,6 +1,6 @@
 %Practice trial
 
-function [wPtr,wOff,isCorrect] = practice3(subj, blockNum, blockType, wPtr, wOff, rect,stimdur)
+function [wPtr,wOff,isCorrect] = practice3(subj, visit, blockNum, blockType, wPtr, wOff, rect,stimdur)
 
 
     DevId      = -1;
@@ -232,9 +232,9 @@ function [wPtr,wOff,isCorrect] = practice3(subj, blockNum, blockType, wPtr, wOff
     end
 
     % ---------------------------------------------------------- End of experiment  ----------------------------------------------------------------- %
-    outDir = ['./log/', subj];
+    outDir = ['./log/', subj, '/visit', visit];
     mkdir(outDir);
-    save(fullfile(outDir, [subj 'linebisection_practice3_' num2str(blockNum) '_results.mat']));
+    save(fullfile(outDir, [subj '_visit' visit '_linebisection_practice3_' num2str(blockNum) '_results.mat']));
     
     
     % ---------------------------------------------------------- End Screen  ----------------------------------------------------------------- 

@@ -1,6 +1,6 @@
 %Practice trial---Part 1---they have as long as they need to answer the question
 
-function [wPtr,wOff] = practice1(subj, blockNum, blockType, wPtr, wOff, rect)
+function [wPtr,wOff] = practice1(subj, visit, blockNum, blockType, wPtr, wOff, rect)
 
     DevId      = -1;
 
@@ -236,9 +236,9 @@ function [wPtr,wOff] = practice1(subj, blockNum, blockType, wPtr, wOff, rect)
     end
 
     % ---------------------------------------------------------- End of experiment  ----------------------------------------------------------------- %
-    outDir = ['./log/', subj];
+    outDir = ['./log/', subj, '/visit', visit];
     mkdir(outDir);
-    save(fullfile(outDir, [subj 'linebisection_practice1' num2str(blockNum) '_results.mat']));
+    save(fullfile(outDir, [subj '_visit' visit '_linebisection_practice1' num2str(blockNum) '_results.mat']));
     
     
     % ---------------------------------------------------------- End Screen  ----------------------------------------------------------------- 

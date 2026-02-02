@@ -48,7 +48,7 @@ expInfo['expName'] = expName
 expInfo['psychopyVersion'] = psychopyVersion
 
 # Data file name stem = absolute path + name; later add .psyexp, .csv, .log, etc
-filename = _thisDir + os.sep + u'data/%s_%s_%s_%s' % (expInfo['Participant'], expInfo['Session'], expName, expInfo['date'])
+filename = _thisDir + os.sep + u'data/%s_visit%s_%s_%s' % (expInfo['Participant'], expInfo['Session'], expName, expInfo['date'])
 
 # An ExperimentHandler isn't essential but helps with data saving
 thisExp = data.ExperimentHandler(name=expName, version='',

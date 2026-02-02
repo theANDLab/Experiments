@@ -1,12 +1,12 @@
 % visualize_data
 
-function [] = visualize_data(subj)
+function [] = visualize_data(subj, visit)
 
     % find number of blocks
-    
-    file_pattern = sprintf('%slinebisection_block*_results.mat', subj);
 
-    files = dir(fullfile(pwd, 'log', subj, file_pattern));
+    file_pattern = sprintf('%s_visit%s_linebisection_block*_results.mat', subj, visit);
+
+    files = dir(fullfile(pwd, 'log', subj, ['visit' visit], file_pattern));
 
     nBlocks = numel(files);
     % nBlocks = 4;
@@ -88,7 +88,8 @@ function [] = visualize_data(subj)
     
     output = table(SubjID,stimduration, fit, coef1, coef2, threshold);
 
-    writetable(output,[pwd, '\log\', subj, '\', subj, '_LineBisection_Data.csv'])
+    writetable(output,[pwd, '\log\', subj, '\visit', visit , '\', subj, '_LineBisection_Data.csv'])
+
 
     %% Graph
 
@@ -125,5 +126,6 @@ function [] = visualize_data(subj)
         title([subj ' Rightward Bias = ' num2str(threshold)])
     end
     
-    saveas(f,[pwd, '\log\', subj, '\', subj, '_LineBisection_Figure.jpg']);
+    saveas(f,[pwd, '\log\', subj, '\visit', visit , '\', subj, '_LineBisection_Figure.jpg']);
+
 

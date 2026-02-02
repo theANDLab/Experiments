@@ -2,7 +2,7 @@
 
 %Practice trial
 
-function [wPtr,wOff] = practice2b(subj, blockNum, blockType, wPtr, wOff, rect)
+function [wPtr,wOff] = practice2b(subj, visit, blockNum, blockType, wPtr, wOff, rect)
 
     [id, names] = GetKeyboardIndices;
     DevId      = -1;
@@ -235,9 +235,9 @@ function [wPtr,wOff] = practice2b(subj, blockNum, blockType, wPtr, wOff, rect)
     end
 
     % ---------------------------------------------------------- End of experiment  ----------------------------------------------------------------- %
-    outDir = ['./log/', subj];
+    outDir = ['./log/', subj, '/visit', visit];
     mkdir(outDir);
-    save(fullfile(outDir, [subj 'linebisection_practice2b_' num2str(blockNum) '_results.mat']));
+    save(fullfile(outDir, [subj '_visit' visit '_linebisection_practice2b_' num2str(blockNum) '_results.mat']));
     
     
     % ---------------------------------------------------------- End Screen  ----------------------------------------------------------------- 

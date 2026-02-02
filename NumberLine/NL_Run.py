@@ -17,7 +17,7 @@ data_folder = 'data'
 if not os.path.exists(data_folder):
     os.makedirs(data_folder)
 
-filename = os.path.join(data_folder, 'numline_' + exp_info['participant_id']+ exp_info['session'])
+filename = os.path.join(data_folder, 'numline_' + exp_info['participant_id']+ '_visit'+ exp_info['session'])
 thisExp = data.ExperimentHandler(name=exp_name, version='',
                                  extraInfo=exp_info, runtimeInfo=None,
                                  originPath='',

@@ -13,7 +13,7 @@
 %
 % April 2019 edited by Na Yeon Kim
 
-function [wPtr,wOff] = linebisection(subj, blockNum, blockType, wPtr, wOff, rect, stimdur)
+function [wPtr,wOff] = linebisection(subj, visit, blockNum, blockType, wPtr, wOff, rect, stimdur)
 
     DevId      = -1;
     
@@ -264,9 +264,9 @@ function [wPtr,wOff] = linebisection(subj, blockNum, blockType, wPtr, wOff, rect
     end
 
     % ---------------------------------------------------------- End of experiment  ----------------------------------------------------------------- %
-    outDir = ['./log/', subj];
+    outDir = ['./log/', subj, '/visit', visit];
     mkdir(outDir);
-    save(fullfile(outDir, [subj 'linebisection_block' num2str(blockNum) '_results.mat']));
+    save(fullfile(outDir, [subj '_visit' visit '_linebisection_block' num2str(blockNum) '_results.mat']));
     
     
 
